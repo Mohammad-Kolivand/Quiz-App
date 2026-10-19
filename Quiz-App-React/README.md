@@ -1,16 +1,55 @@
-# React + Vite
+# QUIZ — آزمون شخصی فارسی
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+اپلیکیشن آزمون فارسی با **React، Vite، JavaScript و lucide-react**؛ رابط راست‌به‌چپ، فونت Vazirmatn و طراحی تیره با کنتراست قوی و تأکید رنگی سبز لیمویی.
 
-Currently, two official plugins are available:
+## امکانات
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- ساخت فضای شخصی هنگام ورود با نام، ایمیل و حوزه تخصصی؛ بدون رمز عبور.
+- داشبورد، آزمون، تحلیل نتیجه، مرور پاسخ‌ها، سوابق و دستاوردها؛ هر صفحه در کامپوننت مستقل.
+- انتخاب موضوع، سطح دشواری و تعداد سؤال در صفحه مستقل، پیش از شروع هر آزمون.
+- بانک سؤال‌های واقعی و ثابت در چهار حوزه: دانش عمومی، علوم و فناوری، تاریخ و فرهنگ و برنامه‌نویسی؛ هر حوزه ۳۰ سؤال.
+- ترتیب تصادفی سؤال‌ها و گزینه‌ها؛ در هر حوزه، دو آزمون کامل ۱۵ سؤالی پشت‌سرهم بدون تکرار سؤال اجرا می‌شود؛ پس از مصرف بانک، چرخه تازه آغاز می‌شود.
+- توضیح پاسخ‌ها، زمان‌سنج، سوابق آزمون و تحلیل نتیجه با توجه به حوزه تخصصی کاربر.
+- ذخیره پروفایل، سابقه و چرخه سؤال‌ها در `localStorage` مرورگر فعلی.
+- کامپوننت‌های رابط و ابزارهای منطق آزمون در فولدرهای جداگانه.
 
-## React Compiler
+## اجرا
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+بررسی نسخه تولید:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+npm run preview
+```
+
+## ساختار پروژه
+
+```text
+src/
+├── components/
+│   ├── pages/
+│   │   ├── Achievements.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── History.jsx
+│   │   ├── Onboarding.jsx
+│   │   ├── Quiz.jsx
+│   │   ├── QuizSetup.jsx
+│   │   └── Result.jsx
+│   └── ui/
+│       ├── EmptyState.jsx
+│       └── StatCard.jsx
+├── utils/
+│   ├── quizEngine.js
+│   └── specialtyAnalysis.js
+├── App.jsx
+├── data.js
+├── main.jsx
+└── styles.css
+```
+
+> این نسخه فرانت‌اندی و محلی است: حساب کاربری واقعی سمت سرور ساخته نمی‌شود، ایمیل به‌تنهایی احراز هویت نیست و اطلاعات بین مرورگرها یا دستگاه‌ها همگام نمی‌شوند.
